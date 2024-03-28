@@ -46,6 +46,9 @@ class EmailLinkSignInScreen extends ProviderScreen<EmailLinkAuthProvider> {
   /// {@macro ui.auth.screens.responsive_page.max_width}
   final double? maxWidth;
 
+  /// A callback that is called when the link is sent to the user's email.
+  final void Function(String email)? onLinkSent;
+
   const EmailLinkSignInScreen({
     super.key,
     super.auth,
@@ -57,6 +60,7 @@ class EmailLinkSignInScreen extends ProviderScreen<EmailLinkAuthProvider> {
     this.desktopLayoutDirection,
     this.breakpoint = 500,
     this.maxWidth = 1200,
+    this.onLinkSent,
   });
 
   @override
@@ -74,6 +78,7 @@ class EmailLinkSignInScreen extends ProviderScreen<EmailLinkAuthProvider> {
           child: EmailLinkSignInView(
             auth: auth,
             provider: provider,
+            onLinkSent: onLinkSent,
           ),
         ),
       ),
