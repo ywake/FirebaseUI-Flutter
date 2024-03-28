@@ -34,7 +34,7 @@ class EmailLinkAuthProvider
 
   @override
   bool supportsPlatform(TargetPlatform platform) {
-    if (kIsWeb) return false;
+    if (kIsWeb) return true;
     return platform == TargetPlatform.android || platform == TargetPlatform.iOS;
   }
 
