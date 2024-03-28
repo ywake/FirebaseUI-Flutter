@@ -25,12 +25,16 @@ class EmailLinkSignInView extends StatefulWidget {
   /// [EmailInput].
   final FocusNode? emailInputFocusNode;
 
+  /// A callback that is called when the link is sent to the user's email.
+  final void Function(String email)? onLinkSent;
+
   /// {@macro ui.auth.views.email_link_sign_in_view}
   const EmailLinkSignInView({
     super.key,
     this.auth,
     required this.provider,
     this.emailInputFocusNode,
+    this.onLinkSent,
   });
 
   @override
@@ -71,6 +75,7 @@ class _EmailLinkSignInViewState extends State<EmailLinkSignInView> {
                   onSubmitted: (v) {
                     if (formKey.currentState?.validate() ?? false) {
                       ctrl.sendLink(emailCtrl.text);
+                      widget.onLinkSent?.call(emailCtrl.text);
                     }
                   },
                 ),
@@ -86,6 +91,7 @@ class _EmailLinkSignInViewState extends State<EmailLinkSignInView> {
                 label: l.sendLinkButtonLabel,
                 onTap: () {
                   ctrl.sendLink(emailCtrl.text);
+                  widget.onLinkSent?.call(emailCtrl.text);
                 },
               ),
             ],
