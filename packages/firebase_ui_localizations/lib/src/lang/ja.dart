@@ -53,13 +53,13 @@ class JaLocalizations extends FirebaseUILocalizationLabels {
   String get eastInitialLabel => "E";
 
   @override
-  String get emailInputLabel => "メール";
+  String get emailInputLabel => "メールアドレス";
 
   @override
   String get emailIsRequiredErrorText => "メールアドレスは必須です";
 
   @override
-  String get emailLinkSignInButtonLabel => "マジックリンクでサインイン";
+  String get emailLinkSignInButtonLabel => "メールでサインイン";
 
   @override
   String get emailTakenErrorText => "このようなメールアドレスを持つアカウントはすでに存在します";
@@ -175,7 +175,7 @@ class JaLocalizations extends FirebaseUILocalizationLabels {
   String get resetPasswordButtonLabel => "パスワードを再設定";
 
   @override
-  String get sendLinkButtonLabel => "マジックリンクで送信";
+  String get sendLinkButtonLabel => "マジックリンクを送信";
 
   @override
   String get signInActionText => "サインイン";
@@ -197,7 +197,7 @@ class JaLocalizations extends FirebaseUILocalizationLabels {
       "マジックリンクをメールでお送りしました。メールを確認し、リンクを使用してサインインしてください";
 
   @override
-  String get signInWithEmailLinkViewTitleText => "マジックリンクでサインイン";
+  String get signInWithEmailLinkViewTitleText => "メールでサインイン";
 
   @override
   String get signInWithFacebookButtonText => "Facebookでサインイン";
