@@ -3,7 +3,7 @@
 // BSD-style license that can be found in the LICENSE file.
 
 import 'package:firebase_auth/firebase_auth.dart' as fba;
-import 'package:firebase_ui_shared/firebase_ui_shared.dart';
+// import 'package:firebase_ui_shared/firebase_ui_shared.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_ui_auth/firebase_ui_auth.dart';
@@ -37,10 +37,14 @@ class EmailLinkSignInButton extends StatelessWidget {
   Widget build(BuildContext context) {
     final l = FirebaseUILocalizations.labelsOf(context);
 
-    return UniversalButton(
-      text: l.emailLinkSignInButtonLabel,
-      cupertinoIcon: CupertinoIcons.link,
-      materialIcon: Icons.link,
+    return ElevatedButton(
+      style: ElevatedButton.styleFrom(
+        padding: EdgeInsets.zero,
+        elevation: 0.6,
+      ),
+      // text: l.emailLinkSignInButtonLabel,
+      // cupertinoIcon: CupertinoIcons.link,
+      // materialIcon: Icons.link,
       onPressed: () {
         final action = FirebaseUIAction.ofType<EmailLinkSignInAction>(context);
         if (action != null) {
@@ -62,6 +66,22 @@ class EmailLinkSignInButton extends StatelessWidget {
           );
         }
       },
+      child: Row(children: [
+        const Expanded(
+          child: Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 12),
+              child: Icon(CupertinoIcons.mail, size: 20),
+            ),
+          ),
+        ),
+        Text(
+          l.emailLinkSignInButtonLabel,
+          style: const TextStyle(fontSize: 19),
+        ),
+        const Spacer(),
+      ]),
     );
   }
 }
