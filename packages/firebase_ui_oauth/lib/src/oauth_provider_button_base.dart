@@ -269,7 +269,7 @@ class _OAuthProviderButtonBaseState extends State<OAuthProviderButtonBase>
         context,
         style,
         margin,
-        borderRadius,
+        100, // borderRadius,
         iconBorderRadius,
       );
     } else {
@@ -277,7 +277,7 @@ class _OAuthProviderButtonBaseState extends State<OAuthProviderButtonBase>
         context,
         style,
         margin,
-        borderRadius,
+        100, // borderRadius,
         iconBorderRadius,
       );
     }
